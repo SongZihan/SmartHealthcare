@@ -19,13 +19,6 @@ axios.defaults.timeout = 10000
 axios.defaults.headers.common.Authorization = sessionStorage.token
 
 Vue.prototype.$axios = axios
-
-var vm = new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
-
 // 全局响应拦截器
 axios.interceptors.response.use(function (response) {
   // Any status code that lie within the range of 2xx cause this function to trigger
@@ -45,3 +38,9 @@ axios.interceptors.response.use(function (response) {
   }
   return response
 })
+
+var vm = new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')

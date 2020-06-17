@@ -20,20 +20,6 @@ export default {
         params: {
           token: this.$route.hash
         }
-      }).then((res) => {
-        if (res.data.code === -1) {
-          this.$notify.error({
-            title: '错误',
-            message: res.data.msg + '||' + res.data.data
-          })
-          console.log('i get the error')
-        } else if (res.data.code === 200) {
-          this.$notify({
-            title: '成功',
-            message: res.data.msg,
-            type: 'success'
-          })
-        }
       })
     }
   }
