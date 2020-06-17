@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "localtunnel": "^2.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -29,12 +30,25 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
-    "lodash": "^4.17.15",
-    "mavon-editor": "^2.9.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
-    "vue-markdown": "^2.2.4",
     "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/standard"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "camelcase": 0
+    }
   },
   "browserslist": [
     "> 1%",
