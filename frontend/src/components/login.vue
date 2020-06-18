@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { check_token } from '../libs/fibit_helper'
 
 export default {
   name: 'Login',
@@ -80,9 +81,10 @@ export default {
               this.$axios.defaults.headers.common.Authorization = token
               if (res.data.data[1]) {
                 // 如果返回数据中存在token，则直接跳转数据操作页面
-                this.$router.push('/Manage_data')
+                // this.$router.push('/Manage_data')
+                check_token(this, res.data.data[1])
               } else {
-                // 否则去往获取设备数据页面
+                // 否则去往获取token页面
                 window.location.href = process.env.VUE_APP_fibit_url
                 window.open()
               }

@@ -63,9 +63,7 @@ def get_data():
     # 解密jwt，获取用户id
     jwt_tokens = request.headers.get('Authorization', default=None).encode('utf-8')
     decode_tokens = jwt.decode(jwt_tokens, SECRET_WORD, algorithms=['HS256'])
-    print(decode_tokens)
     username = decode_tokens['username']
-
     # 获取请求中的access_token
     token = request.args.get('token').split('=')[1].split('&')[0]
 
@@ -77,5 +75,5 @@ def get_data():
     except Exception as error:
         return -1, str(error)
     else:
-        return "添加成功~~"
+        return 201,"添加成功~~",token
 

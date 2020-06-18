@@ -15,13 +15,14 @@ export default new Vuex.Store({
       // 顺便修改登录状态
       state.is_login = true
       state.token = token
-      sessionStorage.token = token
+      localStorage.token = token
     },
     del_token (state) {
       // 顺便修改登录状态
       state.is_login = false
       state.token = ''
-      sessionStorage.removeItem('token')
+      localStorage.removeItem('token')
+      localStorage.removeItem('fibit_token')
     }
   },
   actions: {
